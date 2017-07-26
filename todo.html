@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ToDo</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<style>
+	.bdr{
+		border: 1px solid ;width: 450px;
+		height: 400px;
+		overflow: scroll;0
+
+	}
+
+	
+	</style>
+</head>
+<body>
+
+
+	<script >
+	 var n=0;m=1,l=0;
+	$(document).ready(function(){
+
+	    $("#btn").click(function(){
+		    	var name=$("#inp").val();
+		     n=n+1;
+		    	var b=$('<input style="color:green;"  type="button" id="m" value="done"/>');
+		    	var b2=$('<input style="color:red;" type="button" value="X"/>');
+		    		var a=	 $("ol").append("<li>"+name,b,b2,"</li>");
+			     $("h5").text(parseInt(n) +"item is added");
+			      $("#btn2").click(function(){
+			      	$("ol,h5").empty();
+			      	 n=0;
+				      });
+				       $(b).click(function(){
+						n=n-1;
+// 						// (".hideme").click(function () {
+//     $(this).closest('li.item').hide();
+// });
+				       $("ol li:nth-child(1)").hide();				
+				       	$(b2).hide();
+
+				       	$(this).hide();
+				  			      });
+				       var myNodelist = document.getElementsByTagName("LI");
+				      $("li").click(function(){
+				       	$(this).css("text-decoration", "line-through"); 
+			      });
+		
+		    });
+	});
+	</script>
+
+
+
+
+	<div style="padding-left: 40%;">
+		<div class="bdr">
+			<input type="textarea" id="inp" name="l" >
+			<button id="btn">ok</button>
+			
+			<p style="background-color: Red;" >
+				<ol>
+					
+				</ol>
+			</p>
+			
+			
+
+			
+		</div>
+	<h5 ></h5>
+	<h4 ></h4>
+	<button id="btn2">complet</button>
+	</div>
+</body>
+</html>
